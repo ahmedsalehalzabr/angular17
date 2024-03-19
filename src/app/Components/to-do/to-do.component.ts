@@ -29,13 +29,27 @@ export class ToDoComponent {
     }
     console.log(this.tasks);
   }
-  EditTask(index : number)
+  // EditTask(index : number)
+  // {
+  //   let updateTask = prompt("Edit Task",this.tasks[index]);
+  //   if(updateTask !== null)
+  //   {
+  //     this.tasks[index] = updateTask.trim();
+  //   }
+  // }\
+  EditTask(index:number, newtaskEdit:string) : string | void 
   {
-    let updateTask = prompt("Edit Task",this.tasks[index]);
-    if(updateTask !== null)
+   
+    if(newtaskEdit.trim() !== "")
     {
-      this.tasks[index] = updateTask.trim();
+      this.tasks[index] = newtaskEdit;
     }
+    else
+    {
+      newtaskEdit = this.tasks[index];
+      return this.newTask = newtaskEdit;
+    }
+    this.newTask ="";
   }
   RemoveTask(index : number)
   {
